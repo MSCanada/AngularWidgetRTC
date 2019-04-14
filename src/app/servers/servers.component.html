@@ -1,0 +1,15 @@
+<app-server *ngFor="let server of serversList" [element]="server" (display) = "clickPressed($event)">
+<p #content>Contecnt</p>	
+
+</app-server>
+<input (input)="onUpdateText($event)"/> 
+<input [(ngModel)]="serverName1" #name>
+<button [disabled]="disableIt"> Click</button>
+
+{{serverName}}
+{{serverName1}}
+
+<p *ngIf="hideIt(); else showIt"> Hello</p>
+<ng-template #showIt>
+<p>No server was created</p>
+</ng-template>
